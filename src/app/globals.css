@@ -1,0 +1,193 @@
+/* src/app/globals.css */
+@import 'tailwindcss';
+
+@theme {
+  --color-noir-bleute: #000220;
+  --color-bleu-nuit: #010230;
+  --color-bleu-mer: #022055;
+
+  --font-family-jura: var(--font-jura), system-ui, sans-serif;
+
+  --animate-fade-in-up: fadeInUp 0.6s ease-out forwards;
+  --animate-float: float 3s ease-in-out infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-noir-bleute);
+  color: rgb(241 245 249);
+  font-feature-settings: 'rlig' 1, 'calt' 1;
+  min-height: 100vh;
+  font-family: var(--font-family-jura);
+}
+
+/* Gradients pour chaque section */
+.section-gradient-hero {
+  background: #000220;
+  background: linear-gradient(
+    162deg,
+    var(--color-noir-bleute) 0%,
+    var(--color-bleu-nuit) 32%,
+    rgba(2, 22, 73, 1) 70%,
+    rgba(2, 28, 80, 1) 79%,
+    var(--color-bleu-mer) 100%
+  );
+  position: relative;
+}
+
+.section-gradient-about {
+  background: var(--color-bleu-nuit);
+  position: relative;
+}
+
+.section-gradient-parcours {
+  background: var(--color-bleu-mer);
+  position: relative;
+}
+
+.section-gradient-projets {
+  background: var(--color-bleu-nuit);
+  position: relative;
+}
+
+.section-gradient-contact {
+  background: var(--color-bleu-mer);
+  position: relative;
+}
+
+/* Glassmorphism styles */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.glass-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.glass-project-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-project-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+.glass-mockup {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-button {
+  background: rgba(59, 130, 246, 0.2) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  color: white !important;
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(59, 130, 246, 0.3) !important;
+  border: 1px solid rgba(59, 130, 246, 0.5) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.glass-button-outline {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-button-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.03);
+  transform: scale(1.01);
+}
+
+/* Animations personnalisées */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .glass-nav {
+    margin: 0 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .nav-link {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}
