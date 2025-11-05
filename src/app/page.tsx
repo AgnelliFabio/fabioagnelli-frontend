@@ -53,14 +53,14 @@ export default function HomePage() {
             <p className="text-lg md:text-xl leading-relaxed text-center max-w-4xl mx-auto">
               Développeur web débutant, je combine créativité et expertise
               technique pour donner vie à vos projets digitaux. Polyvalent suite
-              à ma formation BUT MMI, j'accompagne entreprises et particuliers
+              à ma formation BUT MMI, j&apos;accompagne entreprises et particuliers
               dans leur transformation numérique.
             </p>
 
             {/* <div className="grid md:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-300 mb-2">3+</div>
-                <div className="text-blue-200">Années d'expérience</div>
+                <div className="text-blue-200">Années d&apos;expérience</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-300 mb-2">25+</div>
@@ -97,9 +97,7 @@ export default function HomePage() {
               </div>
               <p className="text-blue-200 mb-4">Agence DEFACTO - Narbonne</p>
               <p className="leading-relaxed">
-                Gestion des assistances d'un environnement d'une centaine de
-                sites de clients en CMS. Accompagnement de clients dans leurs
-                projets de transformation digitale.
+                Gestion des assistances d&apos;un environnement d&apos;une centaine de sites de clients en CMS. Accompagnement de clients dans leurs projets de transformation digitale.
               </p>
             </div>
 
@@ -112,16 +110,14 @@ export default function HomePage() {
               </div>
               <p className="text-blue-200 mb-4">2F Prod - Mougins</p>
               <p className="leading-relaxed">
-                Gestion des assistances d'un environnement d'une centaine de
-                sites de clients en CMS. Accompagnement de clients dans leurs
-                projets de transformation digitale.
+                Gestion des assistances d&apos;un environnement d&apos;une centaine de sites de clients en CMS. Accompagnement de clients dans leurs projets de transformation digitale.
               </p>
             </div>
 
             <div className="glass-card p-8 rounded-2xl">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
                 <h3 className="text-2xl font-bold">
-                  👨‍🎓 BUT Métiers du Multimédia et de l'Internet
+                  👨‍🎓 BUT Métiers du Multimédia et de l&apos;Internet
                 </h3>
                 <span className="text-blue-300 font-medium">
                   Septembre 2022 - Juin 2025
@@ -129,26 +125,10 @@ export default function HomePage() {
               </div>
               <p className="text-blue-200 mb-4">Institut Universitaire de Technologie - Béziers</p>
               <p className="leading-relaxed">
-                Formation large autour du numérique et du web : développement
-                front et back-end, production graphique et audiovisuelle,
-                stratégie de communication, marketing.
+                Formation large autour du numérique et du web : développement front et back-end, production graphique et audiovisuelle, stratégie de communication, marketing.
               </p>
             </div>
-
-            <div className="glass-card p-8 rounded-2xl">
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                <h3 className="text-2xl font-bold">
-                  Formation Développeur Web
-                </h3>
-                <span className="text-blue-300 font-medium">2021 - 2022</span>
-              </div>
-              <p className="text-blue-200 mb-4">École du Web</p>
-              <p className="leading-relaxed">
-                Formation intensive en développement web full stack. Maîtrise
-                des technologies modernes : JavaScript, React, Node.js, PHP,
-                WordPress.
-              </p>
-            </div>
+            
           </div>
         </div>
       </section>
@@ -180,9 +160,9 @@ export default function HomePage() {
                   </div>
 
                   <p className="text-blue-200 leading-relaxed text-lg">
-                    Développement d'une plateforme e-commerce complète avec
+                    Développement d&apos;une plateforme e-commerce complète avec
                     gestion des stocks, paiements sécurisés et interface
-                    d'administration avancée.
+                    d&apos;administration avancée.
                   </p>
 
                   <div className="flex flex-wrap gap-3">
@@ -243,7 +223,7 @@ export default function HomePage() {
                   </div>
 
                   <p className="text-blue-200 leading-relaxed text-lg">
-                    Interface de gestion et d'analyse de données avec graphiques
+                    Interface de gestion et d&apos;analyse de données avec graphiques
                     interactifs, tableaux de bord personnalisables et exports
                     automatisés.
                   </p>
