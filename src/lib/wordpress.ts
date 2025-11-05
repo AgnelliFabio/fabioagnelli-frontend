@@ -14,7 +14,7 @@ export interface Post {
   excerpt: {
     rendered: string
   }
-  acf?: any // Pour les champs ACF
+  acf?: Record<string, unknown> // Pour les champs ACF
 }
 
 // Interface pour les projets portfolio

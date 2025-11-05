@@ -1,7 +1,6 @@
 // src/app/page.tsx
 import Link from 'next/link'
 import { Badge } from '@/components/ui/Badge'
-import { Button } from '@/components/ui/Button'
 import { Header } from '@/components/ui/Header'
 
 export default function HomePage() {

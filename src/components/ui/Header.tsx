@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 
 export function Header() {
   const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(
     null
   )
@@ -21,7 +20,6 @@ export function Header() {
         }
       } else {
         setIsVisible(true)
-        setLastScrollY(currentScrollY)
 
         if (scrollTimeout) {
           clearTimeout(scrollTimeout)
