@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 export function Header() {
   const [isVisible, setIsVisible] = useState(true)
@@ -51,18 +52,21 @@ export function Header() {
     >
       <div className="glass-nav px-4 py-1 rounded-2xl">
         <div className="flex space-x-6 items-center">
-          <a href="#about" className="nav-link">
+          <Link href="/" className="nav-link">
+            Accueil
+          </Link>
+          <Link href="/#about" className="nav-link">
             À propos
-          </a>
-          <a href="#parcours" className="nav-link">
+          </Link>
+          <Link href="/#parcours" className="nav-link">
             Parcours
-          </a>
-          <a href="#projets" className="nav-link">
+          </Link>
+          <Link href="/#projets" className="nav-link">
             Projets
-          </a>
-          <a href="#contact" className="nav-link">
+          </Link>
+          <Link href="/#contact" className="nav-link">
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

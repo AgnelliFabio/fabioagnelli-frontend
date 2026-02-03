@@ -1,12 +1,30 @@
 // src/app/page.tsx
 import Link from 'next/link'
 import Image from 'next/image'
-import { Badge } from '@/components/ui/Badge'
 import { Header } from '@/components/ui/Header'
+import { ProjectCard } from '@/components/ui/ProjectCard'
+import { WelcomePopup } from '@/components/ui/WelcomePopup'
+import { Projet } from '@/types/wordpress'
 
-export default function HomePage() {
+async function getProjets(): Promise<Projet[]> {
+  const res = await fetch('https://admin.fabioagnelli.fr/wp-json/wp/v2/projet', {
+    next: { revalidate: 60 } // Revalidate toutes les 60 secondes
+  })
+
+  if (!res.ok) {
+    return []
+  }
+
+  return res.json()
+}
+
+export default async function HomePage() {
+  const projets = await getProjets()
   return (
     <div className="min-h-screen text-white relative overflow-hidden font-jura">
+      {/* Popup de bienvenue (première visite uniquement) */}
+      <WelcomePopup />
+
       {/* Navigation avec glassmorphism et auto-hide */}
       <Header />
 
@@ -170,134 +188,13 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-8">
-            {/* Projet 1 */}
-            <div className="glass-project-card p-8 rounded-3xl group">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="space-y-6">
-                  <div className="space-y-4">
-                    <Badge className="bg-blue-500/20 text-blue-300 border border-blue-400/30">
-                      Type de projet
-                    </Badge>
-                    <h3 className="text-3xl font-bold">
-                      Nom du projet
-                    </h3>
-                  </div>
-
-                  <p className="text-blue-200 leading-relaxed text-lg">
-                    Description du projet,
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti repellat vitae ab cumque eaque modi maiores voluptatem qui fuga recusandae, ut soluta laboriosam inventore, eum sint. Blanditiis quidem et veritatis.
-                  </p>
-
-                  <div className="flex flex-wrap gap-3">
-                    <Badge
-                      variant="secondary"
-                      className="bg-white/10 text-white border border-white/20"
-                    >
-                      Language
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-white/10 text-white border border-white/20"
-                    >
-                      Techno
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-white/10 text-white border border-white/20"
-                    >
-                      Utilisé
-                    </Badge>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <button className="glass-button-outline px-6 py-2 rounded-lg">
-                      Voir le projet
-                    </button>
-                    {/* <button className="text-blue-300 hover:bg-white/10 px-6 py-2 rounded-lg transition-colors">
-                      Code source
-                    </button> */}
-                  </div>
-                </div>
-
-                {/* A remplacer par une image du projet qui sera dans le champ ACF */}
-                <div className="relative">
-                  <div className="glass-mockup p-6 rounded-2xl transform group-hover:scale-105 transition-transform duration-300">
-                    <div className="bg-white/10 rounded-lg p-6 space-y-3">
-                      <div className="h-4 bg-blue-300/50 rounded w-3/4"></div>
-                      <div className="h-3 bg-blue-200/30 rounded w-1/2"></div>
-                      <div className="grid grid-cols-2 gap-3 mt-6">
-                        <div className="h-16 bg-blue-400/30 rounded"></div>
-                        <div className="h-16 bg-blue-500/30 rounded"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Projet 2 */}
-            {/* <div className="glass-project-card p-8 rounded-3xl group">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="space-y-6">
-                  <div className="space-y-4">
-                    <Badge className="bg-purple-500/20 text-purple-300 border border-purple-400/30">
-                      Application Web
-                    </Badge>
-                    <h3 className="text-3xl font-bold">Dashboard analytique</h3>
-                  </div>
-
-                  <p className="text-blue-200 leading-relaxed text-lg">
-                    Interface de gestion et d&apos;analyse de données avec graphiques
-                    interactifs, tableaux de bord personnalisables et exports
-                    automatisés.
-                  </p>
-
-                  <div className="flex flex-wrap gap-3">
-                    <Badge
-                      variant="secondary"
-                      className="bg-white/10 text-white border border-white/20"
-                    >
-                      React
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-white/10 text-white border border-white/20"
-                    >
-                      Chart.js
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-white/10 text-white border border-white/20"
-                    >
-                      Node.js
-                    </Badge>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <button className="glass-button-outline px-6 py-2 rounded-lg">
-                      Voir le projet
-                    </button>
-                    <button className="text-blue-300 hover:bg-white/10 px-6 py-2 rounded-lg transition-colors">
-                      Code source
-                    </button>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <div className="glass-mockup p-6 rounded-2xl transform group-hover:scale-105 transition-transform duration-300">
-                    <div className="bg-white/10 rounded-lg p-6 space-y-3">
-                      <div className="h-4 bg-purple-300/50 rounded w-2/3"></div>
-                      <div className="h-20 bg-gradient-to-r from-purple-400/30 to-blue-400/30 rounded mt-4"></div>
-                      <div className="grid grid-cols-3 gap-2 mt-3">
-                        <div className="h-2 bg-purple-300/40 rounded"></div>
-                        <div className="h-2 bg-blue-300/40 rounded"></div>
-                        <div className="h-2 bg-indigo-300/40 rounded"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
+            {projets.length > 0 ? (
+              projets.map((projet) => (
+                <ProjectCard key={projet.id} projet={projet} />
+              ))
+            ) : (
+              <p className="text-center text-blue-200">Aucun projet disponible pour le moment.</p>
+            )}
           </div>
 
           <div className="text-center mt-12">
